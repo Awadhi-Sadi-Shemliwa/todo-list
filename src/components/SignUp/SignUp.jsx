@@ -1,6 +1,6 @@
 import React from 'react';
 import './SignUp.css';
-import video from '/media/sda3/todo-list/src/assets/todo-list.mp4';
+import video from '/src/assets/todo-list.mp4';
 
 const SignUp = () => {
   return (

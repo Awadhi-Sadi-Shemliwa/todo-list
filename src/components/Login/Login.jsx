@@ -1,6 +1,6 @@
 import React from 'react';
 import './Login.css';
-import video from '/media/sda3/todo-list/src/assets/todo-list2.mp4';
+import video from '/src/assets/todo-list2.mp4';
 
 const Login = () => {
   return (
