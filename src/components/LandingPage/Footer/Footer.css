@@ -1,0 +1,17 @@
+.footer {
+  background: linear-gradient(189deg, rgba(121, 91, 255, 0.199), rgba(74, 38, 236, 0.575)); 
+    color: #fff;
+    padding: 2rem;
+    text-align: center;
+  }
+  
+  .footer-content {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+  }
+  
+  .footer-content div {
+    text-align: left;
+  }
+  

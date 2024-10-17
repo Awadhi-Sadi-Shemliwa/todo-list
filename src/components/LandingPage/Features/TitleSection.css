@@ -1,0 +1,19 @@
+.title-section {
+    background-size: cover;
+    background-position: center;
+    padding: 4rem;
+    text-align: center;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 300px;
+  }
+  
+  .title-section h2 {
+    background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+    padding: 1rem;
+    border-radius: 5px;
+    font-size: 2rem;
+  }
+  

@@ -1,0 +1,261 @@
+:root {
+  --primary-color: #7959ff;
+  --secondary-color: #4a26ec;
+  --background-color: #f8f9fa;
+  --text-color: #333;
+  --card-background: #2a2a2a;
+  --card-text-color: #ffffff;
+}
+
+body {
+  margin: 0;
+  font-family: 'Arial', sans-serif;
+  background: linear-gradient(135deg, rgba(121, 91, 255, 0.1), rgba(74, 38, 236, 0.2));
+  color: var(--text-color);
+}
+
+.container-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 20px;
+}
+
+.health-partner-container, .health-partner-container1 {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 8px 32px rgba(31, 38, 135, 0.15);
+  backdrop-filter: blur(4px);
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  overflow: hidden;
+  margin-bottom: 20px;
+ 
+}
+
+
+.main-content, .main-content1 {
+  flex: 1;
+  padding: 20px;
+  overflow-y: auto;
+  max-height: calc(100vh - 100px); /* Adjust for bottom nav */
+}
+
+.sidebar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  padding: 10px 0;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+
+.sidebar nav ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: space-around;
+  width: 100%;
+}
+
+.sidebar nav ul li {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.sidebar nav ul li svg {
+  margin-bottom: 5px;
+  font-size: 24px;
+}
+
+
+.hero-image {
+  width: 100%;
+  height: 200px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin-bottom: 1rem;
+}
+
+.button-group {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+}
+
+.button-group button {
+  padding: 0.5rem 1rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-group button:hover {
+  background-color: var(--secondary-color);
+}
+
+
+
+.search-bar input {
+  width: calc(100% - 30px); /* Adjust width to account for padding */
+  padding: 0.75rem 15px;
+  background-color: rgba(255, 255, 255, 0.9);
+  border: 1px solid var(--primary-color);
+  border-radius: 20px;
+  color: var(--text-color);
+  font-size: 16px;
+  margin-bottom: 10px;
+}
+
+.ask-coach-btn {
+  width: 100%;
+  padding: 0.75rem;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+  border-radius: 20px;
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem; /* Add space before the next element */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 16px;
+}
+
+.ask-coach-btn:hover {
+  background-color: var(--secondary-color);
+}
+
+.accordion-item {
+  background-color: var(--card-background);
+  margin-bottom: 0.75rem;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+}
+
+.info-cards1 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+}
+
+.info-card1 {
+  background-color: var(--card-background);
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease;
+}
+
+.info-card1:hover {
+  transform: translateY(-5px);
+}
+
+.info-card1 img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+}
+
+.info-card1 h3 {
+  padding: 0.75rem 1rem;
+  margin: 0;
+  color: var(--card-text-color);
+}
+
+.info-card1 p {
+  padding: 0 1rem 1rem;
+  margin: 0;
+  font-size: 0.9rem;
+  color: #cccccc;
+}
+
+@media (min-width: 768px) {
+  .container-wrapper {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+  }
+
+  .health-partner-container, .health-partner-container1 {
+    flex: 1;
+    max-width: 900px;
+    margin-right: 20px;
+  }
+
+  .sidebar {
+    padding: 5px 0;
+  }
+
+  .sidebar nav ul li svg {
+    font-size: 20px;
+    margin-bottom: 2px;
+  }
+
+  .sidebar nav ul li {
+    font-size: 10px;
+  }
+
+  .hero-image {
+    height: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .container-wrapper {
+    padding: 10px;
+  }
+
+  .main-content, .main-content1 {
+    padding: 15px;
+  }
+
+  .hero-image {
+    height: 150px;
+  }
+
+  .button-group button {
+    font-size: 14px;
+    padding: 0.4rem 0.8rem;
+  }
+
+  .search-bar input, .ask-coach-btn {
+    font-size: 14px;
+    padding: 0.6rem;
+  }
+
+  .info-cards1 {
+    grid-template-columns: 1fr;
+  }
+
+  .sidebar nav ul li svg {
+    font-size: 20px;
+  }
+
+  .sidebar nav ul li {
+    font-size: 10px;
+  }
+}
