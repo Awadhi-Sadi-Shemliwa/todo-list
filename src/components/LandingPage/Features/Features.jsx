@@ -2,9 +2,9 @@ import React from 'react';
 import './Features.css';
 import TitleSection from './TitleSection';
 import FeatureItem from './FeatureItem';
-import weights from '/media/sda3/todo-list/src/assets/weights.png';
-import gym from '/media/sda3/todo-list/src/assets/Gym-structure.png';
-import callrem from '/media/sda3/todo-list/src/assets/calls and reminders.png';
+import weights from '/src/assets/weights.png';
+import gym from '/src/assets/Gym-structure.png';
+import callrem from '/src/assets/calls and reminders.png';
 
 const Features = () => {
   return (

@@ -1,7 +1,7 @@
 import React from 'react';
 import './Section.css';
-import emevent from '/media/sda3/todo-list/src/assets/email-event.png';
-import grocery from '/media/sda3/todo-list/src/assets/fruit-vegetable-juices-zlatko-duric-unsplash.jpg';
+import emevent from '/src/assets/email-event.png';
+import grocery from '/src/assets/fruit-vegetable-juices-zlatko-duric-unsplash.jpg';
 
 const Section = () => {
   return (
