@@ -283,9 +283,15 @@ body {
     flex-direction: column;
   }
 
-  .health-partner-container,
+  .health-partner-container{
+margin-left: 10px;
+width: 100%;
+
+  }
+
+ 
   .health-partner-container1 {
-    width: 95%;
+    width: 100%;
     padding: 20px;
   }
 
