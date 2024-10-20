@@ -23,7 +23,7 @@ const HealthPartner = () => {
         <main className="main-content">
           <h1>Health Partner Overview</h1>
           <div className="hero-image">
-            {healthpartner}
+            <img src={healthpartner} alt='hero'/>
           </div>
           <h2>Your Health Journey</h2>
           <p>A vibrant page showcasing the user's health partner journey.</p>
