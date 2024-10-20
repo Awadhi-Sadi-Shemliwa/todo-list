@@ -166,3 +166,48 @@ nav {
       font-size: 0.85rem;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .login-container {
+    padding: 15px;
+}
+
+header h1 {
+    font-size: 1.5rem;
+}
+
+.login-button {
+    font-size: 0.9rem;
+    padding: 10px;
+}
+
+.login-container {
+  max-width: 100%;
+  padding: 10px;
+  box-shadow: none;
+  border-radius: 0;
+}
+
+#background-video2 {
+  opacity: 0.9;
+  filter: blur(1px);
+}
+
+header h1 {
+  font-size: 1.4rem;
+}
+
+.login-form {
+  padding: 0 10px;
+}
+
+.login-button {
+  padding: 10px;
+  font-size: 0.9rem;
+}
+
+.signup-link {
+  font-size: 0.85rem;
+}
+}
+

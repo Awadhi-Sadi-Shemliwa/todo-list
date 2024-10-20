@@ -155,3 +155,42 @@ input {
     padding: 0.6rem;
   }
 }
+
+@media (min-width: 769px) and (max-width: 1024px){
+  .signup-container {
+    padding: 1.5rem;
+  }
+  .signup-container {
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 90%;
+  }
+  
+  #background-video {
+    opacity: 0.9;
+    filter: blur(1px); /* Increase blur for better readability */
+  }
+
+  header h1 {
+    font-size: 1.8rem;
+  }
+
+  main h2 {
+    font-size: 1.4rem;
+  }
+
+  input {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .signup-button {
+    font-size: 0.9rem;
+    padding: 0.6rem;
+  }
+
+  .login-link {
+    font-size: 0.85rem;
+  }
+}
+

@@ -1,5 +1,10 @@
 import React, { useState } from 'react';
 import { Home, Utensils, PhoneOutgoing, Menu, ChevronDown } from 'lucide-react';
+import healthpartner from '/src/assets/health_partner.jpg';
+import healthyrecipe from '/src/assets/healthyrecipes.png';
+import mindfultechniques from '/src/assets/mindfultechniques.jpg';
+import workoutroutine from '/src/assets/workout-routine.png';
+
 import './HealthPartner.css';
 
 const HealthPartner = () => {
@@ -18,7 +23,7 @@ const HealthPartner = () => {
         <main className="main-content">
           <h1>Health Partner Overview</h1>
           <div className="hero-image">
-            {/* Hero image would go here */}
+            {healthpartner}
           </div>
           <h2>Your Health Journey</h2>
           <p>A vibrant page showcasing the user's health partner journey.</p>
@@ -58,17 +63,17 @@ const HealthPartner = () => {
           </div>
           <div className="info-cards1">
             <div className="info-card1">
-              <img src="/api/placeholder/400/300" alt="Workout Routine" />
+              <img src={workoutroutine} alt="Workout Routine" />
               <h3>Workout Routine</h3>
               <p>A personalized workout plan just for you!</p>
             </div>
             <div className="info-card1">
-              <img src="/api/placeholder/400/300" alt="Healthy Recipes" />
+              <img src={healthyrecipe} alt="Healthy Recipes" />
               <h3>Healthy Recipes</h3>
               <p>Discover delicious and nutritious recipes.</p>
             </div>
             <div className="info-card1">
-              <img src="/api/placeholder/400/300" alt="Mindfulness Techniques" />
+              <img src={mindfultechniques} alt="Mindfulness Techniques" />
               <h3>Mindfulness Techniques</h3>
               <p>Explore techniques for mental well-being.</p>
             </div>

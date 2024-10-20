@@ -1,5 +1,9 @@
 import React, { useState } from 'react';
 import { Home, Mail, User, Settings, Menu } from 'lucide-react';
+import feedback from '/src/assets/feedback.png';
+import newrelease from '/src/assets/newrelease.jpg';
+import newsletter from '/src/assets/newsletters.jpg';
+import meetingcalendar from '/src/assets/Meeting-Calendar-Reminder.jpg';
 import './Email.css';
 
 const EmailPreview = ({ title, sender, snippet, imageUrl }) => (
@@ -23,24 +27,25 @@ const Email = () => {
     title: "Meeting Reminder",
     sender: "team@graphic-tale.com",
     snippet: "Don't forget about the meeting tomorrow at 10 AM.",
-    imageUrl: "/api/placeholder/400/300"
+    imageUrl: {meetingcalendar}
     },
     {
     title: "New Graphic Novel Release",
     sender: "updates@graphic-tale.com",
     snippet: "Check out our latest graphic novel, now available!",
-    imageUrl: "/api/placeholder/400/300"
+    imageUrl: {newrelease}
     },
     {
     title: "Feedback Request",
     sender: "feedback@graphic-tale.com",
     snippet: "We would love to hear your thoughts on our latest release.",
+    imageUrl: {feedback}
     },
     {
     title: "Weekly Newsletter",
     sender: "newsletter@graphic-tale.com",
     snippet: "Catch up on the latest news and updates from Graphic Tale.",
-    imageUrl: "/api/placeholder/400/300"
+    imageUrl: {newsletter}
     }
     ];
 

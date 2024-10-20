@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import { PlusCircle, ShoppingCart, Mail, Calendar, PhoneCall, Dumbbell, Home, User, Settings, LogOut, Menu } from 'lucide-react';
 import { NavLink } from 'react-router-dom'; 
+import foodimage from '/src/assets/foodimage.png';
+import quinoabowl from '/src/assets/quinoa-bowl.jpg';
+import fruitsmoothie from '/src/assets/fruit-smoothie.jpg';
 import './TodoList.css';
 
 const TodoList = () => {
@@ -23,9 +26,9 @@ const TodoList = () => {
   };
 
   const foodSuggestions = [
-    { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: '/api/placeholder/300/200' },
-    { name: 'Quinoa Bowl', description: 'Rich in fiber and nutrients', image: '/api/placeholder/300/200' },
-    { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: '/api/placeholder/300/200' },
+    { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: {foodimage} },
+    { name: 'Quinoa Bowl', description: 'Rich in fiber and nutrients', image: {quinoabowl} },
+    { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: {fruitsmoothie} },
   ];
 
   const toggleMenu = () => {
@@ -38,7 +41,7 @@ const TodoList = () => {
         <header className="app-header">
           <h1>Login Luxe</h1>
           <div className="profile-section">
-            <img src="/api/placeholder/80/80" alt="User profile" className="profile-pic" />
+            <img src="/src/assets/react.svg" alt="User profile" className="profile-pic" />
             <div className="profile-info">
               <h2>Welcome, User!</h2>
               <p>Your personalized dashboard</p>
