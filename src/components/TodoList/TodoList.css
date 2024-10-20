@@ -315,7 +315,7 @@
 
   .todo-list-container, .calorie-update, .food-suggestions {
     margin-left: 0;
-    width: 100%;
+    width: 94%;
   }
 
   .todo-list-grid {
@@ -323,7 +323,9 @@
   }
 
   .food-grid {
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+align-content: center;
+gap: 4.5rem;
   }
 
   /* .bottom-nav {
@@ -360,7 +362,93 @@
     margin-right: 80px;
   }
 
-  .bottom-nav {
+  /* .bottom-nav {
     width: 60px;
+  } */
+}
+
+/* Existing styles... */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 24px;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .bottom-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(248, 249, 250, 0.95);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .bottom-nav.open {
+    left: 0;
+  }
+
+  .nav-button1 {
+    margin-bottom: 20px;
   }
 }
+
+@media (min-width: 769px) {
+  .bottom-nav {
+    left: auto;
+    right: 0;
+    width: 80px;
+    height: 100%;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+  .menu-toggle {
+    display: block;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+
+  .bottom-nav {
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 250px;
+    height: 100vh;
+    background-color: rgba(248, 249, 250, 0.95);
+    flex-direction: column;
+    justify-content: flex-start;
+    padding-top: 60px;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .bottom-nav.open {
+    left: 0;
+  }
+
+  .nav-button1 {
+    margin-bottom: 20px;
+  }
+}
+
+
+/* Existing responsive styles... */

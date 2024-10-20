@@ -1,5 +1,5 @@
-import React from 'react';
-import { Home, Mail, User, Settings } from 'lucide-react';
+import React, { useState } from 'react';
+import { Home, Mail, User, Settings, Menu } from 'lucide-react';
 import './Email.css';
 
 const EmailPreview = ({ title, sender, snippet, imageUrl }) => (
@@ -12,34 +12,47 @@ const EmailPreview = ({ title, sender, snippet, imageUrl }) => (
 );
 
 const Email = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setIsMenuOpen(!isMenuOpen);
+  };
+
   const emails = [
     {
-      title: "Meeting Reminder",
-      sender: "team@graphic-tale.com",
-      snippet: "Don't forget about the meeting tomorrow at 10 AM.",
-      imageUrl: "/api/placeholder/400/300"
+    title: "Meeting Reminder",
+    sender: "team@graphic-tale.com",
+    snippet: "Don't forget about the meeting tomorrow at 10 AM.",
+    imageUrl: "/api/placeholder/400/300"
     },
     {
-      title: "New Graphic Novel Release",
-      sender: "updates@graphic-tale.com",
-      snippet: "Check out our latest graphic novel, now available!",
-      imageUrl: "/api/placeholder/400/300"
+    title: "New Graphic Novel Release",
+    sender: "updates@graphic-tale.com",
+    snippet: "Check out our latest graphic novel, now available!",
+    imageUrl: "/api/placeholder/400/300"
     },
     {
-      title: "Feedback Request",
-      sender: "feedback@graphic-tale.com",
-      snippet: "We would love to hear your thoughts on our latest release.",
+    title: "Feedback Request",
+    sender: "feedback@graphic-tale.com",
+    snippet: "We would love to hear your thoughts on our latest release.",
     },
     {
-      title: "Weekly Newsletter",
-      sender: "newsletter@graphic-tale.com",
-      snippet: "Catch up on the latest news and updates from Graphic Tale.",
-      imageUrl: "/api/placeholder/400/300"
+    title: "Weekly Newsletter",
+    sender: "newsletter@graphic-tale.com",
+    snippet: "Catch up on the latest news and updates from Graphic Tale.",
+    imageUrl: "/api/placeholder/400/300"
     }
-  ];
+    ];
 
   return (
+
+
     <div className="email-container">
+    <div>
+          <button className="menu-toggle" onClick={toggleMenu}>
+    <Menu size={24} />
+  </button>
+    </div>
       <div className="email-dashboard">
         <header>
           <h1>Email Overview</h1>
@@ -51,18 +64,17 @@ const Email = () => {
           ))}
         </div>
       </div>
-      <aside className="sidebar1">
+      <aside className={`sidebar1 ${isMenuOpen ? 'open' : ''}`}>
         <nav>
           <ul>
-            <li><button className="nav-button"><Home size={20} /> Home</button></li>
-            <li><button className="nav-button active"><Mail size={20} /> Emails</button></li>
-            <li><button className="nav-button"><User size={20} /> Profile</button></li>
-            <li><button className="nav-button"><Settings size={20} /> Settings</button></li>
+            <li><button className="nav-button" onClick={toggleMenu}><Home size={20} /> Home</button></li>
+            <li><button className="nav-button active" onClick={toggleMenu}><Mail size={20} /> Emails</button></li>
+            <li><button className="nav-button" onClick={toggleMenu}><User size={20} /> Profile</button></li>
+            <li><button className="nav-button" onClick={toggleMenu}><Settings size={20} /> Settings</button></li>
           </ul>
         </nav>
       </aside>
     </div>
-  
   );
 };
 

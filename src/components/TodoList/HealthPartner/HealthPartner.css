@@ -7,6 +7,7 @@
   --card-text-color: #ffffff;
 }
 
+
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
@@ -259,3 +260,135 @@ body {
     font-size: 10px;
   }
 }
+
+/* Existing styles... */
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 1001;
+}
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .container-wrapper {
+    flex-direction: column;
+  }
+
+  .health-partner-container,
+  .health-partner-container1 {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar nav ul {
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  .sidebar nav ul li {
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .info-cards1 {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+  .info-cards1 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .menu-toggle {
+    display: block;
+  }
+
+  .container-wrapper {
+    flex-direction: column;
+  }
+
+ .health-partner-container{
+margin-left: 250px;
+
+ }
+  .health-partner-container1 {
+    width: 95%;
+    padding: 20px;
+  }
+
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: -250px;
+    width: 250px;
+    height: 100vh;
+    background-color: #f8f9fa;
+    transition: left 0.3s ease-in-out;
+    z-index: 1000;
+  }
+
+  .sidebar.open {
+    left: 0;
+  }
+
+  .sidebar nav ul {
+    flex-direction: column;
+    padding-top: 60px;
+  }
+
+  .sidebar nav ul li {
+    margin-bottom: 20px;
+    cursor: pointer;
+  }
+
+  .info-cards1 {
+    grid-template-columns: 1fr;
+  }
+
+  .button-group {
+    flex-direction: column;
+  }
+
+  .button-group button {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+}
+
+
+
+/* Existing responsive styles... */
