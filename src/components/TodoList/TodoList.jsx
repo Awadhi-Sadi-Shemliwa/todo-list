@@ -25,15 +25,20 @@ const TodoList = () => {
     }
   };
 
+
+
   const foodSuggestions = [
-    { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: {foodimage} },
-    { name: 'Quinoa Bowl', description: 'Rich in fiber and nutrients', image: {quinoabowl} },
-    { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: {fruitsmoothie} },
+    { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: foodimage },
+    { name: 'Quinoa Bowl', description: 'Rich in fiber and nutrients', image: quinoabowl },
+    { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: fruitsmoothie },
   ];
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
   };
+
+
+
 
   return (
     <div className='all'>

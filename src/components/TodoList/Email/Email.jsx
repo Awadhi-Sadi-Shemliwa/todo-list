@@ -27,25 +27,25 @@ const Email = () => {
     title: "Meeting Reminder",
     sender: "team@graphic-tale.com",
     snippet: "Don't forget about the meeting tomorrow at 10 AM.",
-    imageUrl: {meetingcalendar}
+    imageUrl: meetingcalendar
     },
     {
     title: "New Graphic Novel Release",
     sender: "updates@graphic-tale.com",
     snippet: "Check out our latest graphic novel, now available!",
-    imageUrl: {newrelease}
+    imageUrl: newrelease
     },
     {
     title: "Feedback Request",
     sender: "feedback@graphic-tale.com",
     snippet: "We would love to hear your thoughts on our latest release.",
-    imageUrl: {feedback}
+    imageUrl: feedback
     },
     {
     title: "Weekly Newsletter",
     sender: "newsletter@graphic-tale.com",
     snippet: "Catch up on the latest news and updates from Graphic Tale.",
-    imageUrl: {newsletter}
+    imageUrl: newsletter
     }
     ];
 
