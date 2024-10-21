@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import { PlusCircle, ShoppingCart, Mail, Calendar, PhoneCall, Dumbbell, Home, User, Settings, LogOut, Menu } from 'lucide-react';
 import { NavLink } from 'react-router-dom'; 
-// import foodimage from '/src/assets/foodimage.png';
-// import quinoabowl from '/src/assets/quinoa-bowl.jpg';
-// import fruitsmoothie from '/src/assets/fruit-smoothie.jpg';
+import foodimage from '/src/assets/foodimage.png';
+import quinoabowl from '/src/assets/quinoa-bowl.jpg';
+import fruitsmoothie from '/src/assets/fruit-smoothie.jpg';
 import './TodoList.css';
 
 const TodoList = () => {
@@ -26,9 +26,9 @@ const TodoList = () => {
   };
 
   const foodSuggestions = [
-    { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: '/src/assets/foodimage.png' },
-    { name: 'Quinoa Bowl', description: 'Rich in fiber and nutrients', image: '/src/assets/quinoa-bowl.jpg' },
-    { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: '/src/assets/fruit-smoothie.jpg' },
+    { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: {foodimage} },
+    { name: 'Quinoa Bowl', description: 'Rich in fiber and nutrients', image: {quinoabowl} },
+    { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: {fruitsmoothie} },
   ];
 
   const toggleMenu = () => {
