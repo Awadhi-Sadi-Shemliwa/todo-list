@@ -30,7 +30,7 @@ const HealthPartner = () => {
 
       const data = await response.json();
       if (response.ok) {
-        setAnswer(data.response?.candidates?.[0]?.content?.parts?.[0]?.text || "No response generated. Please try a different prompt.");
+        setAnswer(data.result.response.candidates[0].content.parts[0].text);
       } else {
         toast.error(`Error fetching response: ${data.error || 'Unknown error'}`);
       }
