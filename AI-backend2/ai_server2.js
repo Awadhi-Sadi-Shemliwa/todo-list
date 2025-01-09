@@ -11,7 +11,7 @@ app.use(express.json());
 app.use(cors());
 
 // Initialize GoogleGenerativeAI with the API key
-const genAI = new GoogleGenerativeAI("AIzaSyBAH4mKXX7bOkK137jeeHgmd0zWSn0_rgQ");
+const genAI = new GoogleGenerativeAI("AIzaSyB1WZll4oxJKKVvnqrrcYqJKKx1ANmBhPY");
 
 app.post("/api/ask", async (req, res) => {
     const { query: prompt } = req.body;
