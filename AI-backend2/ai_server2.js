@@ -11,12 +11,11 @@ app.use(express.json());
 app.use(cors());
 
 // Initialize GoogleGenerativeAI with the API key
-const genAI = new GoogleGenerativeAI("AIzaSyB1WZll4oxJKKVvnqrrcYqJKKx1ANmBhPY");
+const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
 
 app.post("/api/ask", async (req, res) => {
     const { query: prompt } = req.body;
 
-    console.log(prompt);
     if (!prompt) {
         return res.status(400).json({ error: "Prompt is required." });
     }
