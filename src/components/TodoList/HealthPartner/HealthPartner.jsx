@@ -64,21 +64,24 @@ const HealthPartner = () => {
       <div className="health-partner-container1">
         <main className="main-content1">
           <div className="search-bar">
-          <input
-    type="text"
-    placeholder="Type your prompt here..." // Update placeholder
-    value={prompt} // Change 'question' to 'prompt'
-    onChange={(e) => setPrompt(e.target.value)} // Change 'setQuestion' to 'setPrompt'
+          <div className="input-container">
+  <textarea
+    className="input-prompt"
+    placeholder="Type your prompt here..."
+    value={prompt}
+    onChange={(e) => setPrompt(e.target.value)}
   />
-            <button className="ask-coach-btn" onClick={handleAskCoach}>
-              Ask Coach
-            </button>
-            <input
-              type="text"
-              placeholder="Your answer displayed here"
-              value={answer}
-              readOnly
-            />
+  <button className="ask-coach-btn" onClick={handleAskCoach}>
+    Ask Coach
+  </button>
+  <textarea
+    className="input-answer"
+    placeholder="Your answer displayed here"
+    value={answer}
+    readOnly
+  />
+</div>
+
           </div>
           <div className="accordion">
             <div className="accordion-item">

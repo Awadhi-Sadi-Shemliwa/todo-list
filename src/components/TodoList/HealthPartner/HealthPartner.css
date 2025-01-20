@@ -123,6 +123,62 @@ body {
   margin-bottom: 10px;
 }
 
+.input-container {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 100%;
+}
+
+.input-prompt{
+  width: 98%;
+  height: fit-content;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical; /* Allows resizing vertically */
+}
+.input-answer {
+  width: 98%;
+  padding: 12px;
+  border: 2px solid #ccc;
+  border-radius: 8px;
+  font-size: 16px;
+  resize: vertical; /* Allows resizing vertically */
+}
+
+.input-prompt {
+  min-height: 120px; /* Allows for a larger prompt input area */
+}
+
+.input-answer {
+  min-height: 120px; /* Ensures the answer area can show more content */
+  background-color: #f9f9f9;
+  color: #333;
+  font-family: 'Arial', sans-serif;
+  border-color: #999;
+}
+
+.ask-coach-btn {
+  padding: 10px 20px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.ask-coach-btn:hover {
+  background-color: #45a049;
+}
+
+input, textarea {
+  font-family: 'Arial', sans-serif;
+}
+
+
 .ask-coach-btn {
   width: 100%;
   padding: 0.75rem;

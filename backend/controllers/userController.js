@@ -1,10 +1,9 @@
-const bcrypt = require('bcryptjs');
-const jwt = require('jsonwebtoken');
-const User = require('../models/User');
+import bcrypt from 'bcryptjs';
+import jwt from 'jsonwebtoken';
+import User from '../models/User.js'; // Add .js extension
 
 // Sign up new user
-
-exports.signupUser = async (req, res) => {
+export const signupUser = async (req, res) => {
     const { name, email, password } = req.body; // Destructure data from the request body
   
     // Check if the email already exists
@@ -30,7 +29,7 @@ exports.signupUser = async (req, res) => {
 };
 
 // Log in user
-exports.loginUser = async (req, res) => {
+export const loginUser = async (req, res) => {
     const { email, password } = req.body;
   
     try {
@@ -55,5 +54,4 @@ exports.loginUser = async (req, res) => {
       console.error(error);
       res.status(500).json({ message: 'Server error, please try again later.' });
     }
-  
 };

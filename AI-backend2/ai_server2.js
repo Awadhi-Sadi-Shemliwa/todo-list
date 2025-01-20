@@ -1,7 +1,10 @@
-require("dotenv").config({ path: "./AI-backend2/.env" });
-const express = require("express");
-const cors = require("cors");
-const { GoogleGenerativeAI } = require("@google/generative-ai");
+import dotenv from "dotenv";
+import express from "express";
+import cors from "cors";
+import { GoogleGenerativeAI } from "@google/generative-ai";
+
+// Load environment variables
+dotenv.config({ path: "./AI-backend2/.env" });
 
 const app = express();
 const port = 5002;
@@ -12,7 +15,6 @@ app.use(cors());
 
 // Initialize GoogleGenerativeAI with the API key
 const genAI = new GoogleGenerativeAI(process.env.GOOGLE_API_KEY);
-
 
 app.post("/api/ask", async (req, res) => {
     const { query: prompt } = req.body;
@@ -27,11 +29,6 @@ app.post("/api/ask", async (req, res) => {
         // Ensure the input is structured correctly
         const result = await model.generateContent(prompt.toString());
 
-        // if (!result || !result.candidates || result.candidates.length === 0) {
-        //     return res.status(500).json({ error: "No response generated." });
-        // }
-
-        // const answer = result.candidates[0].output;
         res.json({ result });
     } catch (error) {
         console.error("Error:", error);
