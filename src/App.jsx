@@ -6,7 +6,7 @@ import SignUp from './components/SignUp/SignUp';
 import TodoList from './components/TodoList/TodoList';
 import Groceries from './components/TodoList/Groceries/Groceries';
 import Email from './components/TodoList/Email/Email';
-import CallsAndReminders from './components/TodoList/CallsAndRemainders/CallsAndReminders';
+import TasksAndReminders from './components/TodoList/TasksAndRemainders/TasksAndReminders';
 import HealthPartner from './components/TodoList/HealthPartner/HealthPartner';
 import './App.css';
 
@@ -20,7 +20,7 @@ function App() {
         <Route path="/todolist" element={<TodoList/>}/>
         <Route path="/grocery" element={<Groceries/>}/>
         <Route path="/email" element={<Email/>}/>
-        <Route path="/calls&remainders" element={<CallsAndReminders/>}/>
+        <Route path="/Tasks&remainders" element={<TasksAndReminders/>}/>
         <Route path="/healthpartner" element={<HealthPartner/>}/>
       </Routes>
     </Router>

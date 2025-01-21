@@ -4,7 +4,8 @@ import feedback from '/src/assets/feedback.png';
 import newrelease from '/src/assets/newrelease.jpg';
 import newsletter from '/src/assets/newsletters.jpg';
 import meetingcalendar from '/src/assets/Meeting-Calendar-Reminder.jpg';
-import './Email.css';
+import { Link } from 'react-router-dom';
+
 
 const EmailPreview = ({ title, sender, snippet, imageUrl }) => (
   <div className="email-preview">
@@ -72,7 +73,7 @@ const Email = () => {
       <aside className={`sidebar1 ${isMenuOpen ? 'open' : ''}`}>
         <nav>
           <ul>
-            <li><button className="nav-button" onClick={toggleMenu}><Home size={20} /> Home</button></li>
+          <li><Link to="/todolist"> <button className="nav-button" onClick={toggleMenu}> <Home size={20} /> Home </button> </Link> </li>
             <li><button className="nav-button active" onClick={toggleMenu}><Mail size={20} /> Emails</button></li>
             <li><button className="nav-button" onClick={toggleMenu}><User size={20} /> Profile</button></li>
             <li><button className="nav-button" onClick={toggleMenu}><Settings size={20} /> Settings</button></li>
