@@ -31,7 +31,7 @@ const SignUp = () => {
   };
 
   return (
-    <div className="relative flex justify-center items-center w-screen h-screen bg-gray-50 overflow-hidden">
+    <div className="relative flex justify-center items-center w-full h-screen bg-gray-50 overflow-hidden">
       <video
         autoPlay
         muted
@@ -41,11 +41,17 @@ const SignUp = () => {
         <source src={video} type="video/mp4" />
         Your browser does not support the video tag.
       </video>
-      <div className="bg-white bg-opacity-70 backdrop-blur-md rounded-lg shadow-lg p-6 max-w-md w-full">
-        <h1 className="text-3xl font-bold text-center text-gray-800 mb-4">SignUp Luxe</h1>
-        <h2 className="text-xl font-semibold text-gray-800 mb-2">Create Account</h2>
-        <p className="text-gray-600 mb-4">Please enter your details to sign up.</p>
-        <form className="space-y-4" onSubmit={handleSignUp}>
+      <div className="bg-white bg-opacity-90 backdrop-blur-md rounded-lg shadow-lg p-4 sm:p-6 max-w-xs sm:max-w-md w-full mx-2 overflow-y-scroll">
+        <h1 className="text-2xl sm:text-3xl font-bold text-center text-gray-800 mb-4">
+          SignUp Luxe
+        </h1>
+        <h2 className="text-lg sm:text-xl font-semibold text-gray-800 mb-2">
+          Create Account
+        </h2>
+        <p className="text-sm sm:text-base text-gray-600 mb-4">
+          Please enter your details to sign up.
+        </p>
+        <form className="space-y-3 sm:space-y-4" onSubmit={handleSignUp}>
           <div>
             <label htmlFor="name" className="block text-gray-700 font-medium mb-1">
               Full Name
@@ -56,7 +62,7 @@ const SignUp = () => {
               name="name"
               placeholder="Your full name"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md text-sm sm:text-base focus:ring-2 focus:ring-purple-500 focus:outline-none"
             />
           </div>
           <div>
@@ -69,7 +75,7 @@ const SignUp = () => {
               name="email"
               placeholder="Your email address"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md text-sm sm:text-base focus:ring-2 focus:ring-purple-500 focus:outline-none"
             />
           </div>
           <div>
@@ -82,17 +88,17 @@ const SignUp = () => {
               name="password"
               placeholder="Create a password"
               required
-              className="w-full px-4 py-2 border border-gray-300 rounded-md focus:ring-2 focus:ring-purple-500 focus:outline-none"
+              className="w-full px-3 py-2 sm:py-3 border border-gray-300 rounded-md text-sm sm:text-base focus:ring-2 focus:ring-purple-500 focus:outline-none"
             />
           </div>
           <button
             type="submit"
-            className="w-full bg-purple-600 text-white py-2 rounded-md hover:bg-purple-700 transition-colors"
+            className="w-full bg-purple-600 text-white py-2 sm:py-3 rounded-md text-sm sm:text-base hover:bg-purple-700 transition-colors"
           >
             Sign Up
           </button>
         </form>
-        <p className="text-center text-gray-600 mt-4">
+        <p className="text-center text-gray-600 mt-4 text-sm sm:text-base">
           Already have an account?{' '}
           <a href="/login" className="text-purple-600 hover:underline">
             Login
