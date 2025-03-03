@@ -1,42 +1,48 @@
 import React, { useState } from 'react';
-import {PlusCircle,ShoppingCart,Mail,Calendar,Dumbbell,Home,User,Settings,LogOut,Menu,} from 'lucide-react';
-import { NavLink } from 'react-router-dom';
+import { PlusCircle, ShoppingCart, Mail, Calendar, Dumbbell, Home, User, Settings, LogOut, Menu } from 'lucide-react';
+import { NavLink, useNavigate } from 'react-router-dom'; // Add useNavigate
+import { useTasks } from './TaskContext'; // Import the context hook
 import foodimage from '/src/assets/foodimage.png';
 import quinoabowl from '/src/assets/quinoa-bowl.jpg';
 import fruitsmoothie from '/src/assets/fruit-smoothie.jpg';
-
-
 
 const TodoList = () => {
   const [todos, setTodos] = useState([
     { id: 1, title: 'Groceries', path: '/grocery', description: 'Buy fruits, vegetables, and snacks', icon: ShoppingCart },
     { id: 2, title: 'Emails', path: '/email', description: 'Respond to important emails', icon: Mail },
-    { id: 3, title: 'Tasks, Reminders & Events', path: '/tasks&remainders', description: 'Plan for the upcoming events', icon: Calendar },
+    { id: 3, title: 'Tasks, Reminders & Events', path: '/tasks&reminders', description: 'Plan for the upcoming events', icon: Calendar },
     { id: 4, title: 'Health Partner (Gym)', path: '/healthpartner', description: 'Workout with your partner', icon: Dumbbell },
   ]);
 
   const [newTodo, setNewTodo] = useState('');
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [caloriesBurned, setCaloriesBurned] = useState(500);
-
+  const [caloriesBurned] = useState(500);
+  const { setTasks } = useTasks(); // Access setTasks from context
+  const navigate = useNavigate(); // For navigation
 
   const addTodo = () => {
     if (newTodo.trim() !== '') {
       const newTask = {
         id: Date.now(),
         title: newTodo,
-        path: `/tasks&reminders-${Date.now()}`, // Assign a dynamic path for the new task
+        path: `/tasks&reminders-${Date.now()}`,
         description: 'New task added by user',
-        icon: Calendar, // Default icon for new tasks
+        icon: Calendar,
         startDate: new Date().toLocaleDateString(),
         endDate: new Date(Date.now() + 24 * 60 * 60 * 1000).toLocaleDateString(),
       };
 
-      setTodos((prevTodos) => [...prevTodos, newTask]); // Add the new task to the todos array
-      setNewTodo(''); // Clear the input field
+      // Add to local todos (optional, if you still want to display it here)
+      setTodos((prevTodos) => [...prevTodos, newTask]);
+
+      // Add to shared tasks for TasksAndReminders
+      setTasks((prevTasks) => [...prevTasks, newTask]);
+
+      // Clear input and navigate to TasksAndReminders
+      setNewTodo('');
+      navigate('/tasks&reminders'); // Redirect to the reminders page
     }
   };
-  
 
   const foodSuggestions = [
     { name: 'Grilled Chicken Salad', description: 'A healthy option packed with protein', image: foodimage },
@@ -44,9 +50,7 @@ const TodoList = () => {
     { name: 'Fruit Smoothie', description: 'Refreshing and low in calories', image: fruitsmoothie },
   ];
 
-  const toggleMenu = () => {
-    setIsMenuOpen(!isMenuOpen);
-  };
+  const toggleMenu = () => setIsMenuOpen(!isMenuOpen);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-purple-300 via-blue-300 to-blue-400">
@@ -85,25 +89,20 @@ const TodoList = () => {
             </div>
 
             <div className="mt-6 flex items-center gap-4">
-            <input
-          type="text"
-          value={newTodo}
-          onChange={(e) => setNewTodo(e.target.value)}
-          placeholder="Add a new task"
-          className="flex-grow p-3 border rounded-lg focus:outline-none"
-        />
-        <button
-          onClick={addTodo}
-          className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-800 transition"
-        >
-          <PlusCircle/>Add Task 
-        </button>
-    </div>
-
-      
-      <div>
-</div>
-
+              <input
+                type="text"
+                value={newTodo}
+                onChange={(e) => setNewTodo(e.target.value)}
+                placeholder="Add a new task"
+                className="flex-grow p-3 border rounded-lg focus:outline-none"
+              />
+              <button
+                onClick={addTodo}
+                className="bg-blue-600 text-white px-4 py-2 rounded-lg shadow-md hover:bg-blue-800 transition"
+              >
+                <PlusCircle /> Add Task
+              </button>
+            </div>
           </div>
 
           <div className="mt-6 bg-white bg-opacity-10 backdrop-blur-lg rounded-xl p-6 shadow-lg w-full">
@@ -127,42 +126,29 @@ const TodoList = () => {
           </div>
 
           <aside
-  className={`fixed flex flex-col items-center inset-y-0 bg-gray-100 right-auto left-0 w-[80px] h-full transform ${
-    isMenuOpen ? "translate-x-0" : "-translate-x-full"
-  } transition-transform duration-300`}
->
-  <nav className="p-5 flex flex-col items-center space-y-11 ">
-    <button
-      className="flex flex-col items-center space-y-1 cursor-pointer"
-      onClick={toggleMenu}
-    >
-      <Home />
-      <span className="text-xs">Home</span>
-    </button>
-    <button
-      className="flex flex-col items-center space-y-1 cursor-pointer"
-      onClick={toggleMenu}
-    >
-      <User />
-      <span className="text-xs">Profile</span>
-    </button>
-    <button
-      className="flex flex-col items-center space-y-1 cursor-pointer"
-      onClick={toggleMenu}
-    >
-      <Settings />
-      <span className="text-xs">Settings</span>
-    </button>
-    <button
-      className="flex flex-col items-center space-y-1 cursor-pointer"
-      onClick={toggleMenu}
-    >
-      <LogOut />
-      <span className="text-xs">Logout</span>
-    </button>
-  </nav>
-</aside>
-
+            className={`fixed flex flex-col items-center inset-y-0 bg-gray-100 right-auto left-0 w-[80px] h-full transform ${
+              isMenuOpen ? 'translate-x-0' : '-translate-x-full'
+            } transition-transform duration-300`}
+          >
+            <nav className="p-5 flex flex-col items-center space-y-11">
+              <button className="flex flex-col items-center space-y-1 cursor-pointer" onClick={toggleMenu}>
+                <Home />
+                <span className="text-xs">Home</span>
+              </button>
+              <button className="flex flex-col items-center space-y-1 cursor-pointer" onClick={toggleMenu}>
+                <User />
+                <span className="text-xs">Profile</span>
+              </button>
+              <button className="flex flex-col items-center space-y-1 cursor-pointer" onClick={toggleMenu}>
+                <Settings />
+                <span className="text-xs">Settings</span>
+              </button>
+              <button className="flex flex-col items-center space-y-1 cursor-pointer" onClick={toggleMenu}>
+                <LogOut />
+                <span className="text-xs">Logout</span>
+              </button>
+            </nav>
+          </aside>
         </div>
       </div>
     </div>
@@ -170,4 +156,3 @@ const TodoList = () => {
 };
 
 export default TodoList;
-

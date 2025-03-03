@@ -20,7 +20,7 @@ function App() {
         <Route path="/todolist" element={<TodoList/>}/>
         <Route path="/grocery" element={<Groceries/>}/>
         <Route path="/email" element={<Email/>}/>
-        <Route path="/Tasks&remainders" element={<TasksAndReminders/>}/>
+        <Route path="/tasks&reminders" element={<TasksAndReminders/>}/>
         <Route path="/healthpartner" element={<HealthPartner/>}/>
       </Routes>
     </Router>

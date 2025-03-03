@@ -56,7 +56,7 @@ const Email = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-r from-purple-500 via-indigo-600 to-blue-500 text-gray-100">
+    <div className="min-h-screen bg-gradient-to-br from-purple-300 via-blue-300 to-blue-400 text-gray-100">
       {/* Menu Toggle */}
       <button
         className="fixed top-4 right-4 z-50 p-2 bg-gray-700 rounded-full shadow-md md:hidden"
